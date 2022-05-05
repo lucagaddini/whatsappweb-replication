@@ -174,6 +174,17 @@ const app = new Vue({
                   }
               ],
           }
-    ]
+    ],
+
+    selectedContact: 0
+
+  }, methods: {
+
+    getSelectedContact(index){
+      console.log(index);
+      this.selectedContact = index;
+      
+    }
   }
+
 });

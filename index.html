@@ -21,24 +21,35 @@
 </head>
 <body>
 
-  <div id="app" class="main_wrapper debug-red">
+  <div id="app" class="main_wrapper">
     
-    <aside class="left_container debug-green">
+    <aside class="left_container">
+      <!-- Contiene l'avatar ed il nome dell'utente -->
       <div class="top_bar">
         <div class="user_info">
           <img class="avatar" src="img/avatar_io.jpg" alt="Sofia">
           <span>Sofia</span>
         </div>
+        <div class="top_icons">
+          <i class="fa-solid fa-circle-notch"></i>
+          <i class="fa-solid fa-message"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
       </div>
+
+      <!-- Box per attivare le notifiche -->
       <div class="set_notification_bar"> NOTIFICATION BOX</div>
 
+      <!-- Box contenente l'input per la ricerca dei contatti -->
       <div class="search_bar"> SEARCH BAR</div>
 
+      <!-- Box contenente l'elenco delle chat effettuate con i vari contatti -->
       <div class="contact_box"> 
 
-        <div v-for="element in contact" class="contact_element">
+        <!-- Singolo box relativo alla chat con un determinato contatto ciclato in base ala contenuto dell'array -->
+        <div v-for="(element, index) in contact" class="contact_element" @click="getSelectedContact(index)">
           <div class="col_left">
-            <img class="avatar" :src="'/img/avatar'+element.avatar+'.jpg'" :alt="[element.name]">
+            <img class="avatar" :src="'img/avatar'+element.avatar+'.jpg'" :alt="[element.name]">
             <div class="contact_info">
               <div class="contact_name">{{element.name}}</div>
               <div class="last_message">Ultimo messaggio</div>
@@ -46,24 +57,40 @@
           </div>
           <div class="col_right">
             <div class="date_last_message_box">
-              <div class="date_last_message"> 16/11/2022</div>
+              <div class="date_last_message"> 05/05/2022</div>
             </div>
           </div>
         </div>
 
-      
     </aside>
     
-    <main class="main_container debug-blue">
-      <div class="top_bar"> USER INFO + ICONS</div>
+    <main class="main_container">
+
+      <!-- Box contenente i riferimenti relativi alla contatto scelto -->
+      <div class="top_contact_element">
+        <div class="top_col_left">
+          <img class="avatar" :src="'/img/avatar'+[contact[selectedContact].avatar]+'.jpg'" :alt="contact[selectedContact].name">
+          <div class="contact_info">
+            <div class="contact_name">{{contact[selectedContact].name}}</div>
+            <div class="top_last_message">Ultimo messaggio</div>
+          </div>
+        </div>
+        <div class="top_col_right">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-paperclip"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+      </div>
+
+      <!-- Box contenente lo storico della chat -->
       <div class="chat_box"> MESSAGES HISTORY</div>
+
+      <!-- Box contenente l'input per inviare un nuovo messaggio -->
       <div class="send_message_bar"> SEND NEW MESSAGE</div>
     </main>
 
-
   </div>
   
-
   <script src="js/script.js"></script>
 </body>
 </html>
