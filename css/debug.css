@@ -1,0 +1,67 @@
+.h20{
+  height: 20px;
+}
+
+.h50{
+  height: 50px;
+}
+
+.h100{
+  height: 100px;
+}
+
+.h200{
+  height: 200px;
+}
+
+
+.h300{
+  height: 300px;
+}
+
+.h400{
+  height: 400px;
+}
+
+.h500{
+  height: 500px;
+}
+
+.h600{
+  height: 600px;
+}
+
+.h700{
+  height: 700px;
+}
+
+.h800{
+  height: 800px;
+}
+
+.h900{
+  height: 900px;
+}
+
+.debug-red{
+  background-color: rgba(255, 0, 0, 0.5);
+  border: 1px solid black;
+}
+.debug-green{
+  background-color: rgba(0, 255, 0, 0.5);
+  border: 1px solid black;
+}
+
+.debug-blue{
+  background-color: rgba(0, 0, 255, 0.5);
+  border: 1px solid black;
+}
+.debug-black{
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid black;
+}
+
+.debug-lightblue{
+  background-color: rgba(59, 181, 218, 0.5);
+  border: 1px solid black;
+}

@@ -1,0 +1,84 @@
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dcdbd3;
+  height: 100vh;
+  width: 100%;
+}
+
+.main_wrapper{
+  height: 90%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 800px;
+}
+
+.main_wrapper::before{
+  background-color: #009688;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 150px;
+  content: "";
+}
+
+/* ASIDE ELEMENTS */
+
+.left_container{
+  height: 100%;
+  width: 30%;
+  min-width: 300px;
+}
+
+.main_container{
+  height: 100%;
+  width: 100%;
+  min-width: 400px;
+}
+
+.top_bar {
+  background-color: #eaeaea;
+  width: 100%;
+  height: 50px;
+}
+
+.set_notification_bar {
+  background-color: #8edafc;
+  width: 100%;
+  height: 60px;
+}
+
+.search_bar{
+  background-color: #eaeaea;
+  width: 100%;
+  height: 50px;
+}
+
+/* MAIN ELEMENTS */
+
+.chat_box{
+  height: calc(100% - 100px);
+  background-image: url(../img/mine.jpg);
+  background-position:left
+  background-size: contain;
+  background-repeat: repeat;
+
+}
+
+.send_message_bar {
+  background-color: #f3eeea;
+  width: 100%;
+  height: 50px;
+}
