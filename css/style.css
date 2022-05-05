@@ -51,6 +51,7 @@ body{
   min-width: 300px;
   background-color: #ffffff;
   border: 0.5px solid #d6d6d6;
+  padding: 0;
 }
 
 .main_container{
@@ -58,6 +59,7 @@ body{
   width: 100%;
   min-width: 400px;
   border: 0.5px solid #d6d6d6;
+  padding: 0;
 }
 
 .top_bar {
@@ -72,6 +74,7 @@ body{
 
 .top_bar i{
   padding: 10px;
+  font-size: 20px;
   color: #b1b1b1;
 }
 
@@ -84,9 +87,39 @@ body{
 }
 
 .set_notification_bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   background-color: #8edafc;
   width: 100%;
   height: 60px;
+  padding: 20px;
+}
+
+.notification_icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+
+.notification_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 15px;
+}
+
+.notification_text a{
+  font-size: 12px;
+}
+
+.notification_text span{
+  font-size: 14px;
 }
 
 .search_bar{
@@ -175,5 +208,6 @@ body{
 
 .top_col_right i{
   padding: 10px;
+  font-size: 20px;
   color: #b1b1b1;
 }
