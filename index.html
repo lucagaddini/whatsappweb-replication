@@ -9,6 +9,10 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' integrity='sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==' crossorigin='anonymous'/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/debug.css">
@@ -20,16 +24,40 @@
   <div id="app" class="main_wrapper debug-red">
     
     <aside class="left_container debug-green">
-      <div class="top_bar"> USER AVATAR + ICONS</div>
+      <div class="top_bar">
+        <div class="user_info">
+          <img class="avatar" src="img/avatar_io.jpg" alt="Sofia">
+          <span>Sofia</span>
+        </div>
+      </div>
       <div class="set_notification_bar"> NOTIFICATION BOX</div>
+
       <div class="search_bar"> SEARCH BAR</div>
-      <div class="contact_box"> CONTACT BOX</div>
+
+      <div class="contact_box"> 
+
+        <div v-for="element in contact" class="contact_element">
+          <div class="col_left">
+            <img class="avatar" :src="'/img/avatar'+element.avatar+'.jpg'" :alt="[element.name]">
+            <div class="contact_info">
+              <div class="contact_name">{{element.name}}</div>
+              <div class="last_message">Ultimo messaggio</div>
+            </div>
+          </div>
+          <div class="col_right">
+            <div class="date_last_message_box">
+              <div class="date_last_message"> 16/11/2022</div>
+            </div>
+          </div>
+        </div>
+
+      
     </aside>
     
     <main class="main_container debug-blue">
       <div class="top_bar"> USER INFO + ICONS</div>
       <div class="chat_box"> MESSAGES HISTORY</div>
-      <div class="send_message_bar"> USEND NEW MESSAGE</div>
+      <div class="send_message_bar"> SEND NEW MESSAGE</div>
     </main>
 
 
