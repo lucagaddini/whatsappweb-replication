@@ -100,8 +100,19 @@
         </div>
       </div>
 
-      <!-- Box contenente lo storico della chat -->
-      <div class="chat_box"> MESSAGES HISTORY</div>
+      <!-- Container contenente lo storico della chat -->
+      <div class="messages_container">
+
+        <div class="messages_box debug-black">
+          
+          <div v-for="(element, index) in contact[selectedContact].messages" class="message" :class="element.status">
+            <div class="message-text">{{element.message}}</div>
+            <div class="message-time">{{element.date}}</div>
+          </div>
+
+        </div>
+
+      </div>
 
       <!-- Box contenente le icone ed l'input per inviare un nuovo messaggio -->
       <div class="send_message_bar">

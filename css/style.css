@@ -69,7 +69,9 @@ body{
   margin:0;
 }
 
-.top_bar {
+/* TOP BAR ELEMENTS */
+
+.left_container .top_bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,20 +81,22 @@ body{
   padding: 5px 10px;
 }
 
-.top_bar i{
+.left_container .top_bar i{
   padding: 10px;
   font-size: 20px;
   color: #b1b1b1;
   cursor: pointer;
 }
 
-.user_info{
+.left_container .top_bar .user_info{
   display: flex;
   justify-content: flex-start;
   align-items: center;
   height: 100%;
   font-weight: bold;
 }
+
+/* NOTIFICATION BAR ELEMENTS */
 
 .set_notification_bar {
   display: flex;
@@ -108,6 +112,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   background-color: white;
   border-radius: 50%;
   width: 45px;
@@ -130,6 +135,8 @@ body{
 .notification_text span{
   font-size: 14px;
 }
+
+/* SEARCH BAR ELEMENTS */
 
 .search_bar{
   display: flex;
@@ -167,11 +174,12 @@ body{
   padding: 8px 15px;
 }
 
+/* CONTACTS ELEMENTS */
+
 .contacts_box{
   background-color: #ffffff;
   overflow-y: scroll;
   height: calc(100% - 70px - 60px - 60px);
-  /* DA METTERE CALCOLATO */
   width: 100%;
 }
 
@@ -184,26 +192,26 @@ body{
   cursor: pointer;
 }
 
-.last_message{
+.contact_element .col_right{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.contact_element .col_left{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contact_element .col_left .last_message{
   color: #b7b9bb;
   font-size: 13px;
 }
 
-/* MAIN ELEMENTS */
+/* MAIN CONTAINER ELEMENTS */
 
-.chat_box{
-  height: calc(100% - 60px - 70px);
-  background-image: url(../img/mine.jpg);
-  background-position:left;
-  background-size: contain;
-  background-repeat: repeat;
-}
-
-.send_message_bar {
-  background-color: #f3eeea;
-  width: 100%;
-  height: 60px;
-}
+/* TOP BAR MESSAGES */
 
 .top_contact_element{
   display: flex;
@@ -216,22 +224,15 @@ body{
   padding: 5px 10px;
 }
 
-.top_last_message{
+.top_col_left .top_last_message{
   color: #6a7376;
   font-size: 13px;
 }
 
-.col_left,
-.top_col_left{
+.top_contact_element .top_col_left{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
-
-.col_right{
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
 }
 
 .date_last_message_box{
@@ -243,39 +244,91 @@ body{
   color: grey;
 }
 
-.top_col_right{
+.top_contact_element .top_col_right{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
 
-.top_col_right i{
+.top_contact_element .top_col_right i{
   padding: 10px;
   font-size: 20px;
   color: #b1b1b1;
   cursor: pointer;
 }
 
+/* MESSAGES ELEMENTS */
+
+.messages_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 60px - 70px);
+  background-image: url(../img/mine.jpg);
+  background-position:left;
+  background-size: contain;
+  background-repeat: repeat;
+}
+
+.messages_box{
+  width: 85%;
+  height: 90%;
+}
+
+.messages_box .message{
+  position: relative;
+  background-color: white;
+  margin: 5px 0;
+  min-width: 40%;
+  max-width: 60%;
+  border-radius: 10px;
+  padding: 30px 20px;
+  clear: both;
+}
+
+.messages_box .message .message-time{
+  position: absolute;
+  right: 10px;
+  bottom: 4px;
+  font-size: 12px;
+  color: #b7b9bb;
+}
+
+.messages_box .message.sent{
+  float: right;
+  background-color:#D5F9BA;
+}
+
+.messages_box .message.received{
+  float: left;
+}
+
+
+/* SEND NEW MESSAGE ELEMENTS */
+
 .send_message_bar{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #f3eeea;
+  width: 100%;
+  height: 60px;
 }
 
-.left_icons_box i,
-.right_icons_box i{
+.send_message_bar .left_icons_box i,
+.send_message_bar .right_icons_box i{
   padding: 10px 25px;
   font-size: 25px;
   color: #b1b1b1;
   cursor: pointer;
 }
 
-.input_text_box{
+.send_message_bar .input_text_box{
   width: 100%;
 }
 
-.input_text_box input{
+.send_message_bar .input_text_box input{
   width: 100%;
   color: #757575;
   border-radius: 5px;

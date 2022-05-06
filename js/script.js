@@ -1,12 +1,34 @@
-// Milestone 1
+// *********************** 05 / 05 / 2022 ************************
+// // Milestone 1
 
+// // Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
+// // Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
+
+// // Note:
+// // non è importante per ora che tutti gli elementi grafici siano presenti, l’importante che la struttura sia come da specifiche
+// // l’elenco degli utenti deve essere generato con un v-for e stampare almeno il nome e l’avatar (ultimo messaggio e data per ora possono essere fake)
+// // provate sia con tanti e pochi messaggi con messaggi lunghi o corti. La pagina non si deve mai spaccare
+
+// *********************** 06 / 05 / 2022 ************************
+
+// Milestone 1
 // Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
 // Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
 
-// Note:
-// non è importante per ora che tutti gli elementi grafici siano presenti, l’importante che la struttura sia come da specifiche
-// l’elenco degli utenti deve essere generato con un v-for e stampare almeno il nome e l’avatar (ultimo messaggio e data per ora possono essere fake)
-// provate sia con tanti e pochi messaggi con messaggi lunghi o corti. La pagina non si deve mai spaccare
+// Milestone 2
+// Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
+// Click sul contatto mostra la conversazione del contatto cliccato
+
+// Milestone 3
+// Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+// Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+
+// Milestone 4
+// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+
+// Milestone 5 - opzionale
+// Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+// Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 
 const app = new Vue({
 
@@ -148,72 +170,6 @@ const app = new Vue({
                   {
                       date: '10/01/2020 15:50:00',
                       message: 'Grazie per avermelo ricordato, le scrivo subito!',
-                      status: 'received'
-                  }
-              ],
-          },
-          {
-              name: 'Davide',
-              avatar: '_8',
-              visible: true,
-              messages: [
-                  {
-                      date: '10/01/2020 15:30:55',
-                      message: 'Ciao, andiamo a mangiare la pizza stasera?',
-                      status: 'received'
-                  },
-                  {
-                      date: '10/01/2020 15:50:00',
-                      message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
-                      status: 'sent'
-                  },
-                  {
-                      date: '10/01/2020 15:51:00',
-                      message: 'OK!!',
-                      status: 'received'
-                  }
-              ],
-          },
-          {
-              name: 'Davide',
-              avatar: '_8',
-              visible: true,
-              messages: [
-                  {
-                      date: '10/01/2020 15:30:55',
-                      message: 'Ciao, andiamo a mangiare la pizza stasera?',
-                      status: 'received'
-                  },
-                  {
-                      date: '10/01/2020 15:50:00',
-                      message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
-                      status: 'sent'
-                  },
-                  {
-                      date: '10/01/2020 15:51:00',
-                      message: 'OK!!',
-                      status: 'received'
-                  }
-              ],
-          },
-          {
-              name: 'Davide',
-              avatar: '_8',
-              visible: true,
-              messages: [
-                  {
-                      date: '10/01/2020 15:30:55',
-                      message: 'Ciao, andiamo a mangiare la pizza stasera?',
-                      status: 'received'
-                  },
-                  {
-                      date: '10/01/2020 15:50:00',
-                      message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
-                      status: 'sent'
-                  },
-                  {
-                      date: '10/01/2020 15:51:00',
-                      message: 'OK!!',
                       status: 'received'
                   }
               ],
