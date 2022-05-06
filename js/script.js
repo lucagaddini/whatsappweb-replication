@@ -32,181 +32,244 @@
 
 const app = new Vue({
 
-  el:'#app',
-  data: {
-    contact:[
-          {
-              name: 'Michele',
-              avatar: '_1',
-              visible: true,
-              messages: [
-                  {
-                      date: '10/01/2020 15:30:55',
-                      message: 'Hai portato a spasso il cane?',
-                      status: 'sent'
-                  },
-                  {
-                      date: '10/01/2020 15:50:00',
-                      message: 'Ricordati di stendere i panni',
-                      status: 'sent'
-                  },
-                  {
-                      date: '10/01/2020 16:15:22',
-                      message: 'Tutto fatto!',
-                      status: 'received'
-                  }
-              ],
-          },
-          {
-              name: 'Fabio',
-              avatar: '_2',
-              visible: true,
-              messages: [
-                  {
-                      date: '20/03/2020 16:30:00',
-                      message: 'Ciao come stai?',
-                      status: 'sent'
-                  },
-                  {
-                      date: '20/03/2020 16:30:55',
-                      message: 'Bene grazie! Stasera ci vediamo?',
-                      status: 'received'
-                  },
-                  {
-                      date: '20/03/2020 16:35:00',
-                      message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                      status: 'sent'
-                  }
-              ],
-          },
-          {
-              name: 'Samuele',
-              avatar: '_3',
-              visible: true,
-              messages: [
-                  {
-                      date: '28/03/2020 10:10:40',
-                      message: 'La Marianna va in campagna',
-                      status: 'received'
-                  },
-                  {
-                      date: '28/03/2020 10:20:10',
-                      message: 'Sicuro di non aver sbagliato chat?',
-                      status: 'sent'
-                  },
-                  {
-                      date: '28/03/2020 16:15:22',
-                      message: 'Ah scusa!',
-                      status: 'received'
-                  }
-              ],
-          },
-          {
-              name: 'Alessandro B.',
-              avatar: '_4',
-              visible: true,
-              messages: [
-                  {
-                      date: '10/01/2020 15:30:55',
-                      message: 'Lo sai che ha aperto una nuova pizzeria?',
-                      status: 'sent'
-                  },
-                  {
-                      date: '10/01/2020 15:50:00',
-                      message: 'Si, ma preferirei andare al cinema',
-                      status: 'received'
-                  }
-              ],
-          },
-          {
-              name: 'Alessandro L.',
-              avatar: '_5',
-              visible: true,
-              messages: [
-                  {
-                      date: '10/01/2020 15:30:55',
-                      message: 'Ricordati di chiamare la nonna',
-                      status: 'sent'
-                  },
-                  {
-                      date: '10/01/2020 15:50:00',
-                      message: 'Va bene, stasera la sento',
-                      status: 'received'
-                  }
-              ],
-          },
-          {
-              name: 'Claudia',
-              avatar: '_6',
-              visible: true,
-              messages: [
-                  {
-                      date: '10/01/2020 15:30:55',
-                      message: 'Ciao Claudia, hai novità?',
-                      status: 'sent'
-                  },
-                  {
-                      date: '10/01/2020 15:50:00',
-                      message: 'Non ancora',
-                      status: 'received'
-                  },
-                  {
-                      date: '10/01/2020 15:51:00',
-                      message: 'Nessuna nuova, buona nuova',
-                      status: 'sent'
-                  }
-              ],
-          },
-          {
-              name: 'Federico',
-              avatar: '_7',
-              visible: true,
-              messages: [
-                  {
-                      date: '10/01/2020 15:30:55',
-                      message: 'Fai gli auguri a Martina che è il suo compleanno!',
-                      status: 'sent'
-                  },
-                  {
-                      date: '10/01/2020 15:50:00',
-                      message: 'Grazie per avermelo ricordato, le scrivo subito!',
-                      status: 'received'
-                  }
-              ],
-          },
-          {
-              name: 'Davide',
-              avatar: '_8',
-              visible: true,
-              messages: [
-                  {
-                      date: '10/01/2020 15:30:55',
-                      message: 'Ciao, andiamo a mangiare la pizza stasera?',
-                      status: 'received'
-                  },
-                  {
-                      date: '10/01/2020 15:50:00',
-                      message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
-                      status: 'sent'
-                  },
-                  {
-                      date: '10/01/2020 15:51:00',
-                      message: 'OK!!',
-                      status: 'received'
-                  }
-              ],
-          }
-    ],
+    el:'#app',
+    data: {
+        contact:[
+            {
+                name: 'Michele',
+                avatar: '_1',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Hai portato a spasso il cane?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Ricordati di stendere i panni',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        message: 'Tutto fatto!',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Fabio',
+                avatar: '_2',
+                visible: true,
+                messages: [
+                    {
+                        date: '20/03/2020 16:30:00',
+                        message: 'Ciao come stai?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '20/03/2020 16:30:55',
+                        message: 'Bene grazie! Stasera ci vediamo?',
+                        status: 'received'
+                    },
+                    {
+                        date: '20/03/2020 16:35:00',
+                        message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        status: 'sent'
+                    }
+                ],
+            },
+            {
+                name: 'Samuele',
+                avatar: '_3',
+                visible: true,
+                messages: [
+                    {
+                        date: '28/03/2020 10:10:40',
+                        message: 'La Marianna va in campagna',
+                        status: 'received'
+                    },
+                    {
+                        date: '28/03/2020 10:20:10',
+                        message: 'Sicuro di non aver sbagliato chat?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '28/03/2020 16:15:22',
+                        message: 'Ah scusa!',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Alessandro B.',
+                avatar: '_4',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Lo sai che ha aperto una nuova pizzeria?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Si, ma preferirei andare al cinema',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Alessandro L.',
+                avatar: '_5',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Ricordati di chiamare la nonna',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Va bene, stasera la sento',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Claudia',
+                avatar: '_6',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Ciao Claudia, hai novità?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Non ancora',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 15:51:00',
+                        message: 'Nessuna nuova, buona nuova',
+                        status: 'sent'
+                    }
+                ],
+            },
+            {
+                name: 'Federico',
+                avatar: '_7',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Fai gli auguri a Martina che è il suo compleanno!',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Grazie per avermelo ricordato, le scrivo subito!',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Davide',
+                avatar: '_8',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:51:00',
+                        message: 'OK!!',
+                        status: 'received'
+                    }
+                ],
+            }
+        ],
 
-    selectedContact: 0
+        selectedContact: 0,
+        textNewMessage: ''
 
-  }, methods: {
+    }, methods: {
 
     getSelectedContact(index){
-      console.log(index);
-      this.selectedContact = index;
-      
+        console.log(index);
+        this.selectedContact = index;
+    },
+
+    getCurrentTime(){
+        const currentdate = new Date(); 
+
+        let day, month, hours, minutes, seconds;
+
+        if (currentdate.getDate() < 10){
+            day = "0" + currentdate.getDate();
+        } else day = currentdate.getDate();
+
+        if (currentdate.getMonth()+1 < 10){
+            month = "0" + (currentdate.getMonth()+1);
+        } else month = currentdate.getMonth()+1;
+
+        if (currentdate.getHours() < 10){
+            hours = "0" + currentdate.getHours();
+        } else hours = currentdate.getHours();
+
+        if (currentdate.getMinutes() < 10){
+            minutes = "0" + currentdate.getMinutes();
+        } else minutes = currentdate.getMinutes();
+
+        if (currentdate.getSeconds() < 10){
+            seconds = "0" + currentdate.getSeconds();
+        } else seconds = currentdate.getSeconds();
+
+
+        const datetime = 
+            day + "/" 
+            + month + "/" 
+            + currentdate.getFullYear() + "  "  
+            + hours + ":"  
+            + minutes + ":" 
+            + seconds;
+
+        return datetime;
+    },
+
+    sendNewMessage(){
+        
+        const newMessage = {
+            date: this.getCurrentTime(),
+            message: this.textNewMessage,
+            status: 'sent'
+        }
+
+        this.contact[this.selectedContact].messages.push(newMessage);
+        setTimeout(this.sendAutoAnswer, 1000);
+    },
+
+    sendAutoAnswer(){
+        
+        const newAnswer = {
+            date: this.getCurrentTime(),
+            message: 'Ok! :)',
+            status: 'received'
+        }
+
+        this.contact[this.selectedContact].messages.push(newAnswer);
+    },
+
+    
+
     }
-  }
 
 });
