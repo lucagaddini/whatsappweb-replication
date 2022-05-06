@@ -34,6 +34,10 @@ const app = new Vue({
 
     el:'#app',
     data: {
+        user:{
+            name: 'Claudia',
+            avatar:'_io'
+        },
         contact:[
             {
                 name: 'Michele',
@@ -285,6 +289,10 @@ const app = new Vue({
                 }
 
             });
+        },
+        
+        deleteMessage(index){
+            this.contact[this.selectedContact].messages.splice(index,1);
         }
     }
 

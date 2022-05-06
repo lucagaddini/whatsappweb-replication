@@ -142,7 +142,7 @@ body{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: #eaeaea;
+  background-color: #fafafa;
   width: 100%;
   height: 60px;
   padding: 10px 20px;
@@ -298,7 +298,21 @@ body{
   clear: both;
 }
 
-.messages_box .message .message-time{
+.messages_box .message .message_text{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.messages_box .message .message_text i{
+  display: none;
+}
+
+.messages_box .message .message_text:hover i{
+  display: flex
+}
+
+.messages_box .message .message_time{
   position: absolute;
   right: 10px;
   bottom: 4px;

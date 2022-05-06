@@ -29,8 +29,8 @@
       <!-- Contiene l'avatar ed il nome dell'utente -->
       <div class="top_bar">
         <div class="user_info">
-          <img class="avatar" src="img/avatar_io.jpg" alt="Sofia">
-          <span>Sofia</span>
+          <img class="avatar" :src="'img/avatar'+user.avatar+'.jpg'" :alt="user.name">
+          <span>{{user.name}}</span>
         </div>
         <div class="top_icons">
           <i class="fa-solid fa-circle-notch"></i>
@@ -82,12 +82,12 @@
             <img class="avatar" :src="'img/avatar'+element.avatar+'.jpg'" :alt="[element.name]">
             <div class="contact_info">
               <div class="contact_name">{{element.name}}</div>
-              <div class="last_message">Ultimo messaggio</div>
+              <div class="last_message">{{[...element.messages].pop().message}}</div>
             </div>
           </div>
           <div class="col_right">
             <div class="date_last_message_box">
-              <div class="date_last_message"> 05/05/2022</div>
+              <div class="date_last_message">{{[...element.messages].pop().date}}</div>
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@
 
           <div class="contact_info">
             <div class="contact_name">{{contact[selectedContact].name}}</div>
-            <div class="top_last_message">Ultimo messaggio</div>
+            <div class="top_last_message">Ultimo accesso oggi alle</div>
           </div>
 
         </div>
@@ -125,13 +125,19 @@
 
         <!-- Box contenente i singoli messaggi della chat -->
         <div class="messages_box">
-          
+        
           <div 
             v-for="(element, index) in contact[selectedContact].messages" class="message" 
             :class="element.status"
           >
-            <div class="message-text">{{element.message}}</div>
-            <div class="message-time">{{element.date}}</div>
+            <div class="message_text">{{element.message}}
+              <i 
+                @click="deleteMessage(index)"
+                class="fa-solid fa-trash">
+              </i>
+
+            </div>
+            <div class="message_time">{{element.date}}</div>
           </div>
 
         </div>
