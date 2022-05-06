@@ -73,6 +73,7 @@
         <div 
           v-for="(element, index) in contact" 
           class="contact_element"
+          :class="{'clicked' : index == selectedContact}"
           @click="getSelectedContact(index)"
           v-if="element.visible"
         >

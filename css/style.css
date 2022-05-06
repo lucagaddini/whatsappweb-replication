@@ -192,6 +192,15 @@ body{
   cursor: pointer;
 }
 
+.contact_element:hover{
+  background-color: #e9eaeb;
+}
+
+.contact_element.clicked{
+  background-color: #e9eaeb;
+}
+
+
 .contact_element .col_right{
   display: flex;
   justify-content: flex-start;
