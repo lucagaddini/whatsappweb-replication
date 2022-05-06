@@ -199,77 +199,93 @@ const app = new Vue({
         ],
 
         selectedContact: 0,
-        textNewMessage: ''
+        textNewMessage: '',
+        searchInputText:'',
+        filteredContacts:[]
 
     }, methods: {
 
-    getSelectedContact(index){
-        console.log(index);
-        this.selectedContact = index;
-    },
+        getSelectedContact(index){
+            console.log(index);
+            this.selectedContact = index;
+        },
 
-    getCurrentTime(){
-        const currentdate = new Date(); 
+        getCurrentTime(){
+            const currentdate = new Date(); 
 
-        let day, month, hours, minutes, seconds;
+            let day, month, hours, minutes, seconds;
 
-        if (currentdate.getDate() < 10){
-            day = "0" + currentdate.getDate();
-        } else day = currentdate.getDate();
+            if (currentdate.getDate() < 10){
+                day = "0" + currentdate.getDate();
+            } else day = currentdate.getDate();
 
-        if (currentdate.getMonth()+1 < 10){
-            month = "0" + (currentdate.getMonth()+1);
-        } else month = currentdate.getMonth()+1;
+            if (currentdate.getMonth()+1 < 10){
+                month = "0" + (currentdate.getMonth()+1);
+            } else month = currentdate.getMonth()+1;
 
-        if (currentdate.getHours() < 10){
-            hours = "0" + currentdate.getHours();
-        } else hours = currentdate.getHours();
+            if (currentdate.getHours() < 10){
+                hours = "0" + currentdate.getHours();
+            } else hours = currentdate.getHours();
 
-        if (currentdate.getMinutes() < 10){
-            minutes = "0" + currentdate.getMinutes();
-        } else minutes = currentdate.getMinutes();
+            if (currentdate.getMinutes() < 10){
+                minutes = "0" + currentdate.getMinutes();
+            } else minutes = currentdate.getMinutes();
 
-        if (currentdate.getSeconds() < 10){
-            seconds = "0" + currentdate.getSeconds();
-        } else seconds = currentdate.getSeconds();
+            if (currentdate.getSeconds() < 10){
+                seconds = "0" + currentdate.getSeconds();
+            } else seconds = currentdate.getSeconds();
 
 
-        const datetime = 
-            day + "/" 
-            + month + "/" 
-            + currentdate.getFullYear() + "  "  
-            + hours + ":"  
-            + minutes + ":" 
-            + seconds;
+            const datetime = 
+                day + "/" 
+                + month + "/" 
+                + currentdate.getFullYear() + "  "  
+                + hours + ":"  
+                + minutes + ":" 
+                + seconds;
 
-        return datetime;
-    },
+            return datetime;
+        },
 
-    sendNewMessage(){
-        
-        const newMessage = {
-            date: this.getCurrentTime(),
-            message: this.textNewMessage,
-            status: 'sent'
+        sendNewMessage(){
+            
+            const newMessage = {
+                date: this.getCurrentTime(),
+                message: this.textNewMessage,
+                status: 'sent'
+            }
+
+            this.contact[this.selectedContact].messages.push(newMessage);
+            setTimeout(this.sendAutoAnswer, 1000);
+        },
+
+        sendAutoAnswer(){
+            
+            const newAnswer = {
+                date: this.getCurrentTime(),
+                message: 'Ok! :)',
+                status: 'received'
+            }
+
+            this.contact[this.selectedContact].messages.push(newAnswer);
+        },
+
+        searchMessages(){
+            
+            let filter, nameValue;
+            filter = this.searchInputText.toUpperCase();
+
+            this.contact.forEach(element => {
+
+                nameValue = element.name;
+                if (nameValue.toUpperCase().indexOf(filter) > -1) {
+                    element.visible = true;
+                } else {
+                    element.visible = false;
+                }
+
+            });
         }
-
-        this.contact[this.selectedContact].messages.push(newMessage);
-        setTimeout(this.sendAutoAnswer, 1000);
-    },
-
-    sendAutoAnswer(){
-        
-        const newAnswer = {
-            date: this.getCurrentTime(),
-            message: 'Ok! :)',
-            status: 'received'
-        }
-
-        this.contact[this.selectedContact].messages.push(newAnswer);
-    },
-
-    
-
     }
 
 });

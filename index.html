@@ -56,7 +56,12 @@
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
         <div class="search_input">
-          <input type="text" placeholder="Cerca o inizia una nuova chat">
+          <input 
+            v-model="searchInputText" 
+            type="text" 
+            placeholder="Cerca o inizia una nuova chat"
+            @keyup="searchMessages()"
+          >
         </div>
         
       </div>
@@ -65,7 +70,13 @@
       <div class="contacts_box"> 
 
         <!-- Singolo box relativo alla chat con un determinato contatto ciclato in base ala contenuto dell'array -->
-        <div v-for="(element, index) in contact" class="contact_element" @click="getSelectedContact(index)">
+        <div 
+          v-for="(element, index) in contact" 
+          class="contact_element"
+          @click="getSelectedContact(index)"
+          v-if="element.visible"
+        >
+
           <div class="col_left">
             <img class="avatar" :src="'img/avatar'+element.avatar+'.jpg'" :alt="[element.name]">
             <div class="contact_info">
@@ -114,7 +125,10 @@
         <!-- Box contenente i singoli messaggi della chat -->
         <div class="messages_box">
           
-          <div v-for="(element, index) in contact[selectedContact].messages" class="message" :class="element.status">
+          <div 
+            v-for="(element, index) in contact[selectedContact].messages" class="message" 
+            :class="element.status"
+          >
             <div class="message-text">{{element.message}}</div>
             <div class="message-time">{{element.date}}</div>
           </div>
