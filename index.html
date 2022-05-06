@@ -51,10 +51,18 @@
       </div>
 
       <!-- Box contenente l'input per la ricerca dei contatti -->
-      <div class="search_bar"> SEARCH BAR</div>
+      <div class="search_bar"> 
+        <div class="magnifying_icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="search_input">
+          <input type="text" placeholder="Cerca o inizia una nuova chat">
+        </div>
+        
+      </div>
 
       <!-- Box contenente l'elenco delle chat effettuate con i vari contatti -->
-      <div class="contact_box"> 
+      <div class="contacts_box"> 
 
         <!-- Singolo box relativo alla chat con un determinato contatto ciclato in base ala contenuto dell'array -->
         <div v-for="(element, index) in contact" class="contact_element" @click="getSelectedContact(index)">
@@ -95,8 +103,24 @@
       <!-- Box contenente lo storico della chat -->
       <div class="chat_box"> MESSAGES HISTORY</div>
 
-      <!-- Box contenente l'input per inviare un nuovo messaggio -->
-      <div class="send_message_bar"> SEND NEW MESSAGE</div>
+      <!-- Box contenente le icone ed l'input per inviare un nuovo messaggio -->
+      <div class="send_message_bar">
+        <!-- Box contenente l'icona di sinistra -->
+        <div class="left_icons_box">
+          <i class="fa-regular fa-face-smile"></i>
+        </div>
+
+        <!-- Box contenente l'input per inviare un nuovo messaggio -->
+        <div class="input_text_box">
+          <input type="text" placeholder="Scrivi un messaggio" name="send-message" id="">
+        </div>
+
+        <!-- Box contenente l'icona di destra -->
+        <div class="right_icons_box">
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+
+      </div>
     </main>
 
   </div>
