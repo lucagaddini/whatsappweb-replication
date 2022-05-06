@@ -103,7 +103,7 @@
       <!-- Container contenente lo storico della chat -->
       <div class="messages_container">
 
-        <div class="messages_box debug-black">
+        <div class="messages_box">
           
           <div v-for="(element, index) in contact[selectedContact].messages" class="message" :class="element.status">
             <div class="message-text">{{element.message}}</div>
