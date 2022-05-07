@@ -35,7 +35,7 @@ const app = new Vue({
     el:'#app',
     data: {
         user:{
-            name: 'Claudia',
+            name: 'Luca Gaddini',
             avatar:'_io'
         },
         contact:[
@@ -162,7 +162,7 @@ const app = new Vue({
                 ],
             },
             {
-                name: 'Federico',
+                name: 'Federica',
                 avatar: '_7',
                 visible: true,
                 messages: [

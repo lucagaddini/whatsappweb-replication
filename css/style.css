@@ -274,7 +274,7 @@ body{
   justify-content: center;
   align-items: center;
   height: calc(100% - 60px - 70px);
-  background-image: url(../img/mine.jpg);
+  background-image: url(../img/background.jpg);
   background-position:left;
   background-size: contain;
   background-repeat: repeat;

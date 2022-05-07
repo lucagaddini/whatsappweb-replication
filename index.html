@@ -79,7 +79,7 @@
         >
 
           <div class="col_left">
-            <img class="avatar" :src="'img/avatar'+element.avatar+'.jpg'" :alt="[element.name]">
+            <img class="avatar" :src="'img/avatar'+element.avatar+'.png'" :alt="[element.name]">
             <div class="contact_info">
               <div class="contact_name">{{element.name}}</div>
               <div class="last_message">{{[...element.messages].pop().message}}</div>
@@ -102,7 +102,7 @@
         <div class="top_col_left">
           <img 
             class="avatar" 
-            :src="'img/avatar'+[contact[selectedContact].avatar]+'.jpg'" :alt="contact[selectedContact].name"
+            :src="'img/avatar'+[contact[selectedContact].avatar]+'.png'" :alt="contact[selectedContact].name"
           >
 
           <div class="contact_info">
