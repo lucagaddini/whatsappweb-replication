@@ -29,7 +29,7 @@
       <!-- Contiene l'avatar ed il nome dell'utente -->
       <div class="top_bar">
         <div class="user_info">
-          <img class="avatar" :src="'img/avatar'+user.avatar+'.jpg'" :alt="user.name">
+          <img class="avatar" :src="`img/avatar${user.avatar}.jpg`" :alt="user.name">
           <span>{{user.name}}</span>
         </div>
         <div class="top_icons">
@@ -73,21 +73,21 @@
         <div 
           v-for="(element, index) in contact" 
           class="contact_element"
-          :class="{'clicked' : index == selectedContact}"
+          :class="{'clicked' : index === selectedContact}"
           @click="getSelectedContact(index)"
           v-if="element.visible"
         >
 
           <div class="col_left">
-            <img class="avatar" :src="'img/avatar'+element.avatar+'.png'" :alt="[element.name]">
+            <img class="avatar" :src="`img/avatar${element.avatar}.png`" :alt="[element.name]">
             <div class="contact_info">
               <div class="contact_name">{{element.name}}</div>
-              <div class="last_message">{{[...element.messages].pop().message}}</div>
+              <div class="last_message">{{element.messages[element.messages.length - 1].message}}</div>
             </div>
           </div>
           <div class="col_right">
             <div class="date_last_message_box">
-              <div class="date_last_message">{{[...element.messages].pop().date}}</div>
+              <div class="date_last_message">{{element.messages[element.messages.length - 1].date}}</div>
             </div>
           </div>
         </div>
@@ -102,12 +102,12 @@
         <div class="top_col_left">
           <img 
             class="avatar" 
-            :src="'img/avatar'+[contact[selectedContact].avatar]+'.png'" :alt="contact[selectedContact].name"
+            :src="`img/avatar${[contact[selectedContact].avatar]}.png`" :alt="contact[selectedContact].name"
           >
 
           <div class="contact_info">
             <div class="contact_name">{{contact[selectedContact].name}}</div>
-            <div class="top_last_message">Ultimo accesso oggi alle</div>
+            <div class="top_last_message">Ultimo accesso oggi alle {{contact[selectedContact].messages[contact[selectedContact].messages.length - 1].date}}</div>
           </div>
 
         </div>
