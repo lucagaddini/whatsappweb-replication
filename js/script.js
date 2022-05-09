@@ -299,6 +299,23 @@ const app = new Vue({
         
         deleteMessage(index){
             this.contact[this.selectedContact].messages.splice(index,1);
+        },
+        
+        substringPreviewMessage(message){
+
+            let preview;
+            //Se la stringa è più lunga di 20 caratteri la taglio e metto i puntini
+            if (message.length > 20)
+                {
+                    preview = message.substr(0,20) + '...';
+                }
+                //In caso contrario la stampo per intero
+            else
+                {
+                    preview = message;
+                }
+        
+            return preview;
         }
     }
 

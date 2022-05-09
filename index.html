@@ -93,7 +93,7 @@
             <img class="avatar" :src="`img/avatar${element.avatar}.png`" :alt="[element.name]">
             <div class="contact_info">
               <div class="contact_name">{{element.name}}</div>
-              <div class="last_message">{{element.messages[element.messages.length - 1].message}}</div>
+              <div class="last_message">{{substringPreviewMessage(element.messages[element.messages.length - 1].message)}}</div>
             </div>
           </div>
           <div class="col_right">
