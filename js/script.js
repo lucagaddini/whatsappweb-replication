@@ -30,6 +30,12 @@
 // Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
 // Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 
+
+dayjs.extend(window.dayjs_plugin_customParseFormat);
+dayjs.extend(window.dayjs_plugin_calendar);
+dayjs.locale('it');
+
+
 const app = new Vue({
 
     el:'#app',
@@ -254,7 +260,7 @@ const app = new Vue({
         sendNewMessage(){
             
             const newMessage = {
-                date: this.getCurrentTime(),
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                 message: this.textNewMessage,
                 status: 'sent'
             }
@@ -266,7 +272,7 @@ const app = new Vue({
         sendAutoAnswer(){
             
             const newAnswer = {
-                date: this.getCurrentTime(),
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                 message: 'Ok! :)',
                 status: 'received'
             }

@@ -5,9 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+  <!-- CDN VueJs -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
+  <!-- CDN DayJs -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/dayjs.min.js"></script>
+  <!-- CDN DayJs - Locate ITA-->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/locale/it.js"></script>
+
+    <!-- CDN DayJs - Custom Format-->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/customParseFormat.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/calendar.js"></script>
+
+  <!-- CDN Fontawesome -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' integrity='sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==' crossorigin='anonymous'/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -107,7 +118,7 @@
 
           <div class="contact_info">
             <div class="contact_name">{{contact[selectedContact].name}}</div>
-            <div class="top_last_message">Ultimo accesso oggi alle {{contact[selectedContact].messages[contact[selectedContact].messages.length - 1].date}}</div>
+            <div class="top_last_message">Ultimo accesso il {{contact[selectedContact].messages[contact[selectedContact].messages.length - 1].date}}</div>
           </div>
 
         </div>
@@ -154,7 +165,7 @@
         <!-- Box contenente l'input per inviare un nuovo messaggio -->
         <div class="input_text_box">
           <input 
-            v-model="textNewMessage" 
+            v-model.trim="textNewMessage" 
             @keyup.enter="sendNewMessage"
             type="text" 
             placeholder="Scrivi un messaggio" 
