@@ -49,7 +49,7 @@ body{
 .left_container{
   height: 100%;
   width: 30%;
-  min-width: 380px;
+  min-width: 390px;
   max-width: 450px;
   background-color: #ffffff;
   border: 0.5px solid #d6d6d6;
@@ -184,13 +184,15 @@ body{
 }
 
 .contact_element{
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   border-bottom: 1px solid lightgrey;
   padding: 10px;
   cursor: pointer;
-  min-width: 380px;
+  min-width: 390px;
 }
 
 .contact_element:hover{
@@ -305,14 +307,6 @@ body{
   align-items: center;
 }
 
-.messages_box .message .message_text i{
-  display: none;
-}
-
-.messages_box .message .message_text:hover i{
-  display: flex
-}
-
 .messages_box .message .message_time{
   position: absolute;
   right: 10px;
@@ -328,6 +322,22 @@ body{
 
 .messages_box .message.received{
   float: left;
+}
+
+.message_text .dropdown{
+  display: none;
+}
+
+.message_text .dropdown button{
+  background-color: none;
+}
+
+.message_sub_menu.btn:focus{
+  box-shadow: none;
+}
+
+.message_text:hover .dropdown{
+  display: flex
 }
 
 

@@ -298,7 +298,9 @@ const app = new Vue({
         },
         
         deleteMessage(index){
+
             this.contact[this.selectedContact].messages.splice(index,1);
+    
         },
         
         substringPreviewMessage(message){
