@@ -220,43 +220,6 @@ const app = new Vue({
             this.selectedContact = index;
         },
 
-        getCurrentTime(){
-            const currentdate = new Date(); 
-
-            let day, month, hours, minutes, seconds;
-
-            if (currentdate.getDate() < 10){
-                day = "0" + currentdate.getDate();
-            } else day = currentdate.getDate();
-
-            if (currentdate.getMonth()+1 < 10){
-                month = "0" + (currentdate.getMonth()+1);
-            } else month = currentdate.getMonth()+1;
-
-            if (currentdate.getHours() < 10){
-                hours = "0" + currentdate.getHours();
-            } else hours = currentdate.getHours();
-
-            if (currentdate.getMinutes() < 10){
-                minutes = "0" + currentdate.getMinutes();
-            } else minutes = currentdate.getMinutes();
-
-            if (currentdate.getSeconds() < 10){
-                seconds = "0" + currentdate.getSeconds();
-            } else seconds = currentdate.getSeconds();
-
-
-            const datetime = 
-                day + "/" 
-                + month + "/" 
-                + currentdate.getFullYear() + "  "  
-                + hours + ":"  
-                + minutes + ":" 
-                + seconds;
-
-            return datetime;
-        },
-
         sendNewMessage(){
             
             const newMessage = {
@@ -264,6 +227,8 @@ const app = new Vue({
                 message: this.textNewMessage,
                 status: 'sent'
             }
+
+            this.textNewMessage = '';
 
             this.contact[this.selectedContact].messages.push(newMessage);
             setTimeout(this.sendAutoAnswer, 1000);
